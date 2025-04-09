@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - MDX Events</title>
+     <!--Links Style sheet to HTML-->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <!-- Navigation Bar, includes home page (index), events ,calender,profile,support login paegs as well as a search bar-->
+    <header>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="Events.html" class="active">Events</a>
+            <a href="Calender.html">Calendar</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Login</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </header>
+<!--JS will dynamically load the events created by the user onto the evnts page -->
+    <main class="events-page">
+        <!-- Title -->
+       
+        <h2 style="text-align: center; margin-top: 20px;">Select the event you would like to attend</h2>
+        <div class="events-container"></div>
+
+
+
+
+
+        <!-- Location Section,incude google map of where the events is taking place -->
+        <div class="location-section">
+            <h3>Location Details</h3>
+            <p>Event Venue: Middlesex University Campus</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2480.731622009359!2d-0.22473908422959248!3d51.59011727964639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761064e2fa91cf%3A0x2bc7ef65cfa8979!2sMiddlesex%20University%20London!5e0!3m2!1sen!2suk!4v1642511622989!5m2!1sen!2suk" 
+                width="100%" 
+                height="300" 
+                style="border:0; border-radius: 5px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+        </div>
+    </main>
+
+    <!-- Popup Booking Form  -->
+  
+<div id="popup-form" class="popup">
+    <div class="popup-content">
+      <h3>Reserve Your Spot</h3>
+      <p id="selected-event-name">Event Name</p>
+      <p><strong>Username:</strong> <span id="popup-username"></span></p>
+      <p><strong>Email:</strong> <span id="popup-email"></span></p>
+      
+      <button onclick="submitBooking()">Book Now</button>
+      <button onclick="closePopup()" class="close-btn">Cancel</button>
+    </div>
+  </div>
+  
+    <!--links Javascript to HTML-->
+    <script src="../JS/Script.js"></script>
+</body>
+</html>

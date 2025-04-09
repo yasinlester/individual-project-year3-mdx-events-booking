@@ -1,0 +1,643 @@
+/*Background CSS*/
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/Middlesex-University-featured-image.jpg'); /*importing omage for background from image folder*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* ensures full screen height */
+}
+
+/* =====Navigation barCSS ===== */
+.navbar {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    position: fixed; /* Keep it stuck to the side */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full screen height */
+    width: 220px; /* Sidebar width */
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+/* Style individual navigation links */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    margin: 5px 0;
+    display: block;
+}
+
+/* Highlight active or hovered nav links */
+.navbar a:hover,
+.navbar a.active {
+    background-color: #3498db;
+    border-radius: 5px;
+}
+
+/* ===== Search Bar Styling ===== */
+
+.search-bar input[type="text"] {
+    border: none;
+    padding: 8px;
+    border-radius: 20px;
+    width: 80%;
+    margin: 10px 0;
+}
+.main-content {
+    margin-left: 220px; /* Same as your sidebar width */
+    padding: 20px;
+}
+
+/*  Carousel Slide Styling  */
+.event-slide.active {
+    display: block;
+}
+
+/* Carousel Arrow Buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* Button Styling */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for all buttons */
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+
+    .event-slide {
+        margin: 10px 0;
+    }
+}
+
+#events-carousel {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.upcoming-events-title {
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/*index carsousel CSS*/
+.carousel {
+    width: 50%; 
+    height: auto; 
+    margin: 40px auto; /* Centering the carousel and adding vertical space */
+    overflow: hidden;
+    background-color: #fff; /* background colour */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    position: relative;
+}
+
+.carousel-inner {
+    display: flex;
+    width: auto; /*  Let it size itself */
+    transition: transform 0.5s ease;
+  }
+  
+
+.event-slide {
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    flex-shrink: 0; /* Prevents the slides from shrinking */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #ddd; /* Neutral button color */
+    border: none;
+    border-radius: 50%;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.prev:hover, .next:hover {
+    background-color: #bbb; /* Darker colour on hover for interactivity */
+}
+
+/* =====Events Page CSS ===== */
+
+/* Container for the Events page section */
+.events-page {
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Title styling for the Events page */
+.events-title {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Layout grid for event cards */
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Individual event card styling */
+.event-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Event title inside cards */
+.event-card h3 {
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+/* Paragraph styling for event details */
+.event-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* "Book Now" button inside event card */
+.book-now-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Section for displaying the campus location map */
+.book-now-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Location heading style */
+.location-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+
+.location-section h3 {
+    color: #2c3e50;
+}
+
+/* Map image styling */
+.campus-map {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Popup Form Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.popup-content {
+    text-align: center;
+}
+
+/* Inner content styling for the popup */
+.popup-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons inside the popup */
+.popup-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for popup buttons */
+.popup-content button:hover {
+    background-color: #2980b9;
+}
+
+/* Close button specifically styled in red */
+.close-btn {
+    margin-top: 10px;
+    background-color: #e74c3c;
+}
+
+.close-btn:hover {
+    background-color: #c0392b;
+}
+
+/* For tablets and smaller devices */
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .events-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Calendar Page CSS ===== */
+
+
+/* Main container for the calendar */
+.calendar-container {
+    max-width: 900px;
+    margin: auto; /* Centers the calendar */
+    padding: 20px;
+    background-color: #fff; /*white background*/
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px; /*rounded corners */
+}
+
+/* Table styling for the calendar layout */
+table.calendar {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/* Calendar cell and header styling */
+table.calendar th, 
+table.calendar td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 80px;
+    vertical-align: top;
+    position: relative;
+}
+
+/* Styling for calendar headers (days of the week) */
+table.calendar th {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Event label inside calendar cells */
+.event-tag {
+    background-color: #3498db;
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+}
+
+/* Highlight today’s date */
+.today {
+    background-color: #ecf8ff;
+}
+
+/* ===== Support Page CSS ===== */
+
+/* Container for the entire support section */
+.support-container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Styling for the form title */
+.support-form h2 {
+    color: #2c3e50;
+}
+
+.support-form p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Input and textarea styling for form fields */
+.support-form input[type="text"],
+.support-form input[type="email"],
+.support-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Textarea-specific styles */
+.support-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Submit support form button styles */
+.support-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Button hover effect */
+.support-form button:hover {
+    background-color: #2980b9;
+}
+
+/* ===== Profile Page CSS ===== */
+
+/* Main container for the profile page layout */
+.profile-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #fff; /*background colour */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /*rounded corners*/
+    align-items: center; /* Center content horizontally */
+}
+
+/* Section for the profile image and edit button */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/*user profile image css*/
+.user-profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Buttons used for editing profile and creating events */
+.edit-profile-btn,
+.create-event-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/* Hover effect for buttons */
+
+.edit-profile-btn:hover,
+.create-event-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Shared styles for bio and event manager sections */
+.user-bio, .event-manager {
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Bullet list style for user's events */
+.event-manager ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Popup window styling to edit profile */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+/* Popup content input fields and buttons */
+.popup-content input, 
+.popup-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/* ===== Login, Register, and Forgot Password Form Styling ===== */
+
+/* Main form container styling used for login/register/forgot */
+.form {
+    position: relative;
+    z-index: 1;
+    background: white;
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  } 
+  
+  
+  /* Input fields inside the form (email, password, etc.) */
+  .form input {
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: white;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  /*button for login ,register and forgot password page*/
+  .form button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #3498db;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color:white;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+  }
+  
+  /*Form message CSS for login,register or forgot password button*/
+  .form .message {
+    margin: 15px 0 0;
+    color: #b3b3b3;
+    font-size: 12px;
+  }
+  
+  /*css code for forgot password and create an account on the login page*/
+  .form .message a {
+    color: #3498db;
+    text-decoration: none;
+  }
+
+  /* Full-page layout centering for login/register pages */
+  .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full viewport height */
+    padding: 0;
+    margin: 0;
+  }
+  
+/* ===== Logout Message Pop-up Styling ===== */
+
+/* Hidden logout confirmation message */
+.popup-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: 9999;
+    display: none;
+  }
+  
+  /* Show the pop-up with fade-in animation */
+  .popup-message.show {
+    opacity: 1;
+    display: block;
+  }
+  
+  /* ===== Cancel Button Styling for Booked Events in Profile Page ===== */
+
+  /* Styles each list item in the user's event list */
+  #user-events-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Base styling for the "Cancel" button */
+  .cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  /*Css for hover animation for cancel button*/
+  .cancel-btn:hover {
+    background-color: #c0392b;
+  }
+  

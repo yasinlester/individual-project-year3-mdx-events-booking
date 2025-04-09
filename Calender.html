@@ -1,0 +1,73 @@
+<!-- HTML: calendar.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - MDX Events</title> 
+    <!--Links Style sheet to HTML-->
+    <link rel="stylesheet" href="../CSS/Style.css">
+    
+</head>
+<body>
+
+      <!-- Navigation Bar, includes home page (index), events ,calender,profile,support login paegs as well as a search bar-->
+    <header>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="Events.html">Events</a>
+            <a href="Calender.html" class="active">Calendar</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Login</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </header>
+
+    <!--HTML for calendar container-->
+
+    <main class="calendar-container">
+        <h2 style="text-align:center; color: #2c3e50;">February 2025</h2>
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td><td>3</td><td>4</td>
+                    <td>5 <div class="event-tag" onclick="navigateToEvent('events.html')">Culture Festival</div></td>
+                    <td>6</td><td>7</td><td>8</td>
+                </tr>
+                <tr>
+                    <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                    <td>14 <div class="event-tag" onclick="navigateToEvent('events.html')">Career Fair</div></td><td>15</td>
+                </tr>
+                <tr>
+                    <td>16</td><td>17</td>
+                    <td>18 <div class="event-tag" onclick="navigateToEvent('events.html')">Hackathon</div></td>
+                    <td>19</td><td>20</td><td>21</td><td>22</td>
+                </tr>
+                <tr>
+                    <td>23</td><td>24</td><td class="today">25</td><td>26</td><td>27</td><td>28</td><td></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <!--links Javascript to HTML-->
+    <script src="../JS/Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - MDX Events</title>
+     <!--Links Style sheet to HTML-->
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body>
+      <!-- Navigation Bar, includes home page (index), events ,calender,profile,support login paegs as well as a search bar-->
+    <header>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="Events.html">Events</a>
+            <a href="Calender.html">Calendar</a>
+            <a href="profile.html" class="active">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Login</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </header>
+
+    <!--html for users profile scetion placeholder such as profile picture -->
+    <main class="profile-container">
+        <div class="profile-section">
+            <div class="profile-header">
+                <img src="../Images/default-profile.png" alt="Profile Picture" class="user-profile-img">
+                <button class="edit-profile-btn" onclick="openEditProfile()">Edit Profile</button>
+            </div>
+<!--dynamically loads user information when they loigin ,will display the user whi us currently logged in in the profile section-->
+            <div class="user-info-box">
+                <h3>My Info</h3>
+                <p><strong>Username:</strong> <span id="profileUsername">Loading...</span></p>
+                <p><strong>Email:</strong> <span id="profileEmail">Loading...</span></p>
+              </div>
+              
+<!--HTML for user to mange thier evnets and create events-->
+            <div class="event-manager">
+                <h3>Event Manager - My Events</h3>
+                <ul id="user-events-list">
+                    <li>Event 1 details...</li>
+                    <li>Event 2 details...</li>
+                </ul>
+                <button class="create-event-btn" onclick="openCreateEventPopup()">Create Event</button>
+            </div>
+<!--html for profile section such as edit user profile /setting such as profile picture,bio and reset password-->
+            <div id="edit-profile-popup" class="popup">
+                <div class="popup-content">
+                    <button onclick="changeProfilePic()">Change Profile Picture</button>
+                    <button onclick="editBio()">Edit Bio</button>
+                    <button onclick="resetPassword()">Forgot Password</button>
+                    <button class="close-btn" onclick="closeEditProfile()">Close</button>
+                </div>
+            </div>
+
+   
+
+        <p id="loginWarning" style="color: red; display: none;">Please log in to view your profile.</p>
+
+        
+
+    </main>
+   
+<!-- Create Event Popup -->
+<div id="create-event-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <h3>Create Event</h3>
+      <input type="text" id="event-name" placeholder="Event Title">
+      <input type="date" id="event-date">
+      <textarea id="event-description" placeholder="Event Description"></textarea>
+      <button onclick="submitNewEvent()">Create Event</button>
+      <button onclick="closeCreateEvent()">Cancel</button>
+    </div>
+  </div>
+  
+    <!--links Javascript to HTML-->
+    <script src="../JS/Script.js"></script>
+</body>
+</html>

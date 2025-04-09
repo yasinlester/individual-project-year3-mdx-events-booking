@@ -1,0 +1,44 @@
+<!-- support.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - MDX Events</title>
+     <!--Links Style sheet to HTML-->
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body>
+      <!-- Navigation Bar, includes home page (index), events ,calender,profile,support login paegs as well as a search bar-->
+    <header>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="Events.html">Events</a>
+            <a href="Calender.html">Calendar</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html" class="active">Support</a>
+            <a href="login.html">Login</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </header>
+<!--Support page form -->
+    <main class="support-container">
+        <div class="support-form">
+            <h2>Welcome to our Support Center.</h2>
+            <p>Type your question below, and we'll do our best to reply back to you as quickly as we can.</p>
+  <!--form for user to fill out,requires username,emial,studnet id-->
+            <form id="support-form">
+                <input type="text" placeholder="Username" id="username" required>
+                <input type="email" placeholder="Email" id="email" required>
+                <textarea placeholder="Please enter your question in the box below" id="question" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <!--links Javascript to HTML-->
+    <script src="../JS/Script.js"></script>
+</body>
+</html>

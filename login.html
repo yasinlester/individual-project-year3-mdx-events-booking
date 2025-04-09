@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MDX Events</title>
+     <!--Links Style sheet to HTML-->
+    <link rel="stylesheet" href="../CSS/Style.css">
+</head>
+<body>
+  <!-- Navigation Bar, includes home page (index), events ,calender,profile,support login paegs as well as a search bar-->
+    <header>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="Events.html">Events</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html" class="active">Login</a>
+            <a href="#" id="logoutBtn" style="display: none;">Logout</a> 
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </header>
+<!--login form container HTML-->
+    <main>
+        <div class="login-page">
+            <div class="form">
+                <form class="login-form" id="loginForm" onsubmit="loginUser(event)">
+<!--required fileds the user must fill out-->
+
+                    <input type="text" id="loginUsername" name="loginUsername" placeholder="enter username" required>
+                    <input type="password" id="loginPassword" name="loginPassword" placeholder="enter password" required>
+<!--login button-->
+
+                    <button type="submit">Login</button>
+<!--option for user to register for account, link will take them to regsiter page-->
+
+                    <p class="message">Not registered? <a href="register.html">Create an account</a></p>
+                    <p class="message"><a href="forgot-password.html">Forgotten password?</a></p>
+<!--login success message-->
+                    <div id="successMessage" style="color: green; display: none;">
+                        Login successful!
+                    </div>
+<!--login validation-->                    
+                    <div id="errorMessage" style="color: red; display: none;">
+                        Incorrect username or password. Please try again.
+                    </div>
+                    <div id="existmessage" style="color: red; display: none;">
+                        Username or email already exists. Please try again.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+<!--logout message popup-->
+    <div id="logoutPopup" class="popup-message">You have been logged out.</div>
+
+    <!--links Javascript to HTML-->
+    <script src="../JS/Script.js"></script>
+</body>
+</html>

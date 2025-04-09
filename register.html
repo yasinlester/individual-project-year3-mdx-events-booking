@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - MDX Events</title>
+   <!--Links Style sheet to HTML-->
+  <link rel="stylesheet" href="../CSS/Style.css" />
+</head>
+<body>
+    <!-- Navigation Bar, includes home page (index), events ,calender,profile,support login paegs as well as a search bar-->
+  <header>
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="Events.html">Events</a>
+      <a href="Calender.html">Calendar</a>
+      <a href="profile.html">Profile</a>
+      <a href="support.html">Support</a>
+      <a href="login.html">Login</a>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+  </header>
+
+  <!--User register form,requires username,email,password,phone number,student id and gender,all fields are require to fill out-->
+  <main>
+    <div class="login-page">
+      <div class="form">
+        <form class="register-form" id="registrationForm" onsubmit="registerUser(event)">
+          <input type="email" id="email" placeholder="Enter your email address" required />
+          <input type="text" id="username" placeholder="Create a username" required />
+          <input type="password" id="password" placeholder="Create a password" required />
+          <input type="password" id="confirmPassword" placeholder="Confirm your password" required />
+          <input type="text" id="phone" placeholder="Enter your phone number" required />
+          <input type="text" id="universityId" placeholder="Enter your University ID" required />
+        
+          <select id="gender" name="gender" required>
+            <option value="">Please select your gender</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
+        
+          <button type="submit">Register</button>
+        <!--option for user to go to login page iof already have an account-->
+
+          <p class="message">Have an account already? <a href="login.html">Login here</a></p>
+
+        <!--registration  success message-->
+
+          <div id="successMessage" style="display: none;">
+            <p>Registration successful!</a></p>
+          </div>
+        <!--validation tells user if any fields are already linked to another account-->
+          <div id="existmessage" style="color: red; display: none;">
+            Username or email already exists. Please try again.
+          </div>
+        </form>
+        
+      </div>
+    </div>
+  </main>
+
+  <!--links Javascript to HTML-->
+  <script src="../JS/Script.js"></script>
+</body>
+</html>

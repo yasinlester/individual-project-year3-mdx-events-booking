@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDX Events</title>
+     <!--Links Style sheet to HTML-->
+    <link rel="stylesheet" href="../CSS/Style.css">
+
+</head>
+<body>
+      <!-- Navigation Bar, includes home page (index), events ,calender,profile,support login paegs as well as a search bar-->
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="active">Home</a>
+            <a href="Events.html">Events</a>
+            <a href="Calender.html">Calendar</a>
+            <a href="profile.html">Profile</a>
+            <a href="support.html">Support</a>
+            <a href="login.html">Login</a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+    </header>
+
+    <!--Events carousel for home page,has all the events avaible to book,will redirect user to events page of they want to book-->
+    <main>
+        <section id="events-carousel">
+            <div class="carousel">
+              <h2 class="upcoming-events-title">Welcome to MDX Booking</h2>
+              <h2 class="upcoming-events-title">Upcoming Events</h2>
+              <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+              <div class="carousel-inner">
+                <!-- JS will dynamically insert event slides here -->
+              </div>
+              <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+          </section>
+          
+    </main>
+    <!--links Javascript to HTML-->
+    <script src="../JS/Script.js"></script>
+</body>
+</html>
