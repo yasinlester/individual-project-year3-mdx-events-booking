@@ -50,7 +50,7 @@ if (password !== confirmPassword) {
 
   try {
   // Send registration data to backend
-    const response = await fetch("http://127.0.0.1:5000/api/register", {
+    const response = await fetch("https://mdx-events-booking.onrender.com/api/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, username, password, phone, universityId, gender }),
@@ -91,7 +91,7 @@ async function loginUser(event) {
 
   try {
  // Send login data to the backend API
-    const response = await fetch("http://127.0.0.1:5000/api/login", {
+    const response = await fetch("https://mdx-events-booking.onrender.com/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ emailOrUsername: usernameOrEmail, password }),
@@ -177,11 +177,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
  // Fetch user's bookings from backend
-    const bookingsRes = await fetch(`http://127.0.0.1:5000/api/bookings/${user.email}`);
+    const bookingsRes = await fetch(`https://mdx-events-booking.onrender.com/api/bookings/${user.email}`);
     const bookings = await bookingsRes.json();
 
 // Fetch all events to match them with bookings
-    const eventsRes = await fetch("http://127.0.0.1:5000/api/events");
+    const eventsRes = await fetch("https://mdx-events-booking.onrender.com/api/events");
     const allEvents = await eventsRes.json();
 
     const eventsList = document.getElementById("user-events-list");
@@ -214,7 +214,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           if (!confirmCancel) return;
 
           try {
-            const res = await fetch(`http://127.0.0.1:5000/api/bookings/${booking._id}`, {
+            const res = await fetch(`https://mdx-events-booking.onrender.com/api/bookings/${booking._id}`, {
+
               method: "DELETE"
             });
 
@@ -266,7 +267,7 @@ async function submitBooking() {
   const user = JSON.parse(localStorage.getItem("loggedInUser"));
   const eventName = document.getElementById("selected-event-name").innerText;
   try {
-    const response = await fetch("http://127.0.0.1:5000/api/book", {
+    const response = await fetch("https://mdx-events-booking.onrender.com/api/book", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -315,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!cancelEventId || !cancelEventElement) return;
 
       try {
-        const res = await fetch(`http://127.0.0.1:5000/api/bookings/${cancelEventId}`, {
+        const res = await fetch(`https://mdx-events-booking.onrender.com/api/bookings/${cancelEventId}`, {
           method: "DELETE",
         });
 
@@ -361,7 +362,7 @@ async function submitNewEvent() {
   try {
   
   // Send event data to backend API to create event
-    const response = await fetch("http://127.0.0.1:5000/api/events", {
+    const response = await fetch("https://mdx-events-booking.onrender.com/api/events", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -404,7 +405,7 @@ async function loadEvents() {
   try {
 
 // Fetch all events from the backend
-    const res = await fetch("http://127.0.0.1:5000/api/events");
+    const res = await fetch("https://mdx-events-booking.onrender.com/api/events");
     const data = await res.json();
 
     console.log(" Events fetched:", data); 
@@ -471,7 +472,7 @@ async function loadCarousel() {
   try {
 
 // Fetch event data from backend
-    const res = await fetch("http://127.0.0.1:5000/api/events");
+    const res = await fetch("https://mdx-events-booking.onrender.com/api/events");
     const events = await res.json();
 
 // Get the carousel container element
