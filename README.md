@@ -34,7 +34,7 @@ Clone the repository:
 bash
 Copy
 Edit
-git clone https://github.com/your-username/event-booking-system.git
+git clone https://github.com/yasinlester/mdx-events-booking.git
 Navigate to the backend directory:
 
 bash
