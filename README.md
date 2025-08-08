@@ -1,64 +1,67 @@
-Cloud-Based Event Management and Booking System for Middlesex University
-This project is a full-stack web application developed to streamline event booking at Middlesex University. It enables students and staff to register, log in, browse events, and make bookings through a responsive, browser-based interface. The system was built using HTML, CSS, JavaScript, Node.js, Express.js, and MongoDB Atlas.
+# Cloud-Based Event Management and Booking System for Middlesex University
 
-Note: Full AWS deployment (EC2, S3, RDS, Lambda) was originally planned but not completed due to time constraints. However, the system is structured to support future cloud integration.
+This project is a full-stack web application developed to streamline event booking at Middlesex University.  
+It enables students and staff to register, log in, browse events, and make bookings through a responsive, browser-based interface.
 
-Features
-Secure user registration and login with password hashing
+The system was built using **HTML, CSS, JavaScript, Node.js, Express.js**, and **MongoDB Atlas**.
 
-Event creation, listing, and booking functionality
+> **Note:** Full AWS deployment (EC2, S3, RDS, Lambda) was originally planned but not completed due to time constraints.  
+> However, the system is structured to support future cloud integration.
 
-Profile page with user information and event creation form
+---
 
-Real-time booking updates reflected in MongoDB Atlas
+## 🚀 Features
 
-Responsive web design compatible with desktops and mobile devices
+- Secure user registration and login with password hashing
+- Event creation, listing, and booking functionality
+- Profile page with user information and event creation form
+- Real-time booking updates reflected in MongoDB Atlas
+- Responsive design for desktop and mobile
+- Interactive event carousel and calendar view (UI implemented)
+- Backend API tested with Postman
+- Session handling via localStorage
 
-Interactive event carousel and calendar view (UI implemented)
+---
 
-Backend API tested with Postman
+## 🧰 Technologies Used
 
-Session handling via localStorage
+| Layer     | Technologies                          |
+|-----------|----------------------------------------|
+| Frontend  | HTML, CSS, JavaScript                  |
+| Backend   | Node.js, Express.js                    |
+| Database  | MongoDB Atlas (via Mongoose ODM)       |
+| Tools     | Visual Studio Code, Git, Postman       |
+| Security  | bcryptjs, dotenv, CORS                 |
 
-Technologies Used
-Layer	Technologies
-Frontend	HTML, CSS, JavaScript
-Backend	Node.js, Express.js
-Database	MongoDB Atlas (via Mongoose ODM)
-Tools	Visual Studio Code, Git, Postman
-Security	bcryptjs, dotenv, CORS
+---
 
-How to Run Locally
-Clone the repository:
+## 🛠️ How to Run Locally
 
-bash
-Copy
-Edit
-git clone https://github.com/yasinlester/mdx-events-booking.git
-Navigate to the backend directory:
+```bash
+# Clone the repository
+git clone https://github.com/yasinlester/individual-project-year3-mdx-events-booking.git
 
-bash
-Copy
-Edit
+# Navigate to the backend directory
 cd Backend
-Install dependencies:
 
-bash
-Copy
-Edit
+# Install dependencies
 npm install
-Start the server:
 
-bash
-Copy
-Edit
+# Start the server
 node server.js
-Ensure you have a .env file with your MongoDB Atlas connection string defined as MONGO_URI.
+```
 
-Project Structure
-pgsql
-Copy
-Edit
+Make sure to create a `.env` file in the `Backend` folder with your MongoDB Atlas connection string:
+
+```
+MONGO_URI=your_connection_string_here
+```
+
+---
+
+## 📁 Project Structure
+
+```
 event-booking-system/
 ├── Backend/
 │   ├── server.js
@@ -72,42 +75,47 @@ event-booking-system/
 │   ├── Profile.html
 │   └── script.js
 └── README.md
-API Endpoints
-Method	Endpoint	Description
-POST	/api/register	Register a new user
-POST	/api/login	Log in and receive user data
-GET	/api/events	Retrieve all event listings
-POST	/api/events	Create a new event
-POST	/api/book	Book a selected event
-DELETE	/api/bookings/:id	Cancel a booking
+```
 
-Limitations
-The system is not fully deployed to AWS
+---
 
-Some frontend pages (support, calendar, forgot password) are not connected to backend logic
+## 🔗 API Endpoints
 
-Role-based access, profile editing, and password reset are not implemented
+| Method | Endpoint           | Description                       |
+|--------|--------------------|-----------------------------------|
+| POST   | /api/register      | Register a new user               |
+| POST   | /api/login         | Log in and receive user data      |
+| GET    | /api/events        | Retrieve all event listings       |
+| POST   | /api/events        | Create a new event                |
+| POST   | /api/book          | Book a selected event             |
+| DELETE | /api/bookings/:id  | Cancel a booking                  |
 
-Session handling is client-side only (via localStorage)
+---
 
-Planned Future Enhancements
-Full AWS deployment (EC2, S3, Lambda, RDS)
+## ⚠️ Limitations
 
-Role-based access (admin, moderator)
+- Not fully deployed to AWS
+- Some frontend pages (support, calendar, forgot password) are UI-only
+- Role-based access, profile editing, and password reset not implemented
+- Session handling is client-side only
 
-Event capacity management
+---
 
-Email notifications (confirmation, reminders)
+## 🌱 Planned Future Enhancements
 
-Event filtering and search functionality
+- Full AWS deployment (EC2, S3, Lambda, RDS)
+- Role-based access (admin, moderator)
+- Event capacity management
+- Email notifications (confirmation, reminders)
+- Event filtering and search functionality
+- Interactive calendar with real-time booking updates
+- Admin dashboard with analytics
+- Real-time features via WebSockets
+- Refined styling and UI consistency
 
-Interactive calendar with real-time booking updates
+---
 
-Admin dashboard with user and booking analytics
+## 🎓 Academic Context
 
-Real-time features using WebSockets
-
-Refined styling and consistent UI patterns
-
-Academic Context
-This project was submitted as part of the final year BSc Computer Science degree at Middlesex University. It reflects practical experience in building secure, responsive, and cloud-oriented web applications.
+This project was submitted as part of the final year **BSc Computer Science** degree at **Middlesex University**.  
+It demonstrates practical experience in building secure, responsive, and cloud-ready web applications.
