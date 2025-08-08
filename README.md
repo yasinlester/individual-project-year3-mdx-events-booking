@@ -10,7 +10,7 @@ The system was built using **HTML, CSS, JavaScript, Node.js, Express.js**, and *
 
 ---
 
-## 🚀 Features
+## Features
 
 - Secure user registration and login with password hashing
 - Event creation, listing, and booking functionality
@@ -23,7 +23,7 @@ The system was built using **HTML, CSS, JavaScript, Node.js, Express.js**, and *
 
 ---
 
-## 🧰 Technologies Used
+## Technologies Used
 
 | Layer     | Technologies                          |
 |-----------|----------------------------------------|
@@ -35,7 +35,7 @@ The system was built using **HTML, CSS, JavaScript, Node.js, Express.js**, and *
 
 ---
 
-## 🛠️ How to Run Locally
+##  How to Run Locally
 
 ```bash
 # Clone the repository
@@ -59,7 +59,7 @@ MONGO_URI=your_connection_string_here
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 event-booking-system/
@@ -92,7 +92,7 @@ event-booking-system/
 
 ---
 
-## ⚠️ Limitations
+##  Limitations
 
 - Not fully deployed to AWS
 - Some frontend pages (support, calendar, forgot password) are UI-only
@@ -101,7 +101,7 @@ event-booking-system/
 
 ---
 
-## 🌱 Planned Future Enhancements
+##  Planned Future Enhancements
 
 - Full AWS deployment (EC2, S3, Lambda, RDS)
 - Role-based access (admin, moderator)
